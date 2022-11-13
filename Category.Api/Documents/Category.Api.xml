@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Category.Api</name>
+    </assembly>
+    <members>
+        <member name="T:Category.Api.Controllers.CategoryController">
+            <summary>
+            Category Controller
+            </summary>
+        </member>
+        <member name="M:Category.Api.Controllers.CategoryController.#ctor(Category.Business.Abstruct.ICategoryManager)">
+            <summary>
+            ctor
+            </summary>
+            <param name="categoryManager"></param>
+        </member>
+        <member name="M:Category.Api.Controllers.CategoryController.Create(Category.Entities.DTOs.CreateCategoryModel)">
+            <summary>
+            Create category
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Category.Api.Controllers.CategoryController.Update(Category.Entities.DTOs.CategoryModel)">
+            <summary>
+            Update category
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Category.Api.Controllers.CategoryController.Delete(System.String)">
+            <summary>
+            Delete category by Id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Category.Api.Controllers.CategoryController.Get(System.String)">
+            <summary>
+            Get category by Id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Category.Api.Controllers.CategoryController.GetAll">
+            <summary>
+            List of category
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

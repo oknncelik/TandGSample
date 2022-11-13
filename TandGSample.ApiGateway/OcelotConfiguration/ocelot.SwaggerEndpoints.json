@@ -1,0 +1,30 @@
+{
+  "SwaggerEndPoints": [
+    {
+      "Key": "category",
+      "Config": [
+        {
+          "Name": "Category Api Service",
+          "Version": "v1",
+          "Service": {
+            "Name": "category",
+            "Path": "/swagger/v1/swagger.json"
+          }
+        }
+      ]
+    },
+    {
+      "Key": "product",
+      "Config": [
+        {
+          "Name": "Product Api Service",
+          "Version": "v1",
+          "Service": {
+            "Name": "product",
+            "Path": "/swagger/v1/swagger.json"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+﻿<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col col-2">
+            <ul class="list-group">
+                <li class="list-group-item fw-bold">Categories</li>
+                <div id="categories"></div>
+            </ul>
+        </div>
+
+        <div class="col col-10">
+            <div class="container">
+                <div class="row">
+                    <h5>Products <span id="categoryName"></span></h5>
+                    <div id="products">Choose product category...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script>
+    let categories = [];
+    let products = [];
+
+    $( document ).ready(function() {
+        getCategories();
+    });
+
+
+    function getCategories(){
+            $.get( "https://localhost:9001/category/category/GetAll", function( data ) {
+                if(data.isSuccess){
+                    categories = data.result;
+                    $("#categories").html("");
+                    categories.forEach(item => {
+                        var display = `<button onclick="getProducts('${item.id}')" type="button" class="list-group-item list-group-item-action">${item.name}</button>`;
+                        $("#categories").append(display);
+                    });
+
+                }else{
+                   alert(data.message);
+                }
+            });
+    }
+
+
+    function getProducts(id){
+        $("#products").html("...");
+        var category = categories.find(x=> x.id == id);
+        $("#categoryName").html(`(${category.name})`);
+        $.get(`https://localhost:9001/product/product/categoryproduct/${id}`, function( data ) {
+                if(data.isSuccess){
+                    products = data.result;
+                    $("#products").html("");
+                    var rnd = 1;
+                    products.forEach(item => {
+                        var imgLink = `https://picsum.photos/200/200?random=${rnd}`
+                        var display = `<div class="card mt-3" style="width: 18rem;">
+                                            <img src="${imgLink}" class="card-img-top">
+                                            <div class="card-body">
+                                                <p class="card-text">${item.name}</p>
+                                                <p class="card-text text-muted">${item.description}</p>
+                                                <p class="card-text">$ ${item.price}</p>
+                                            </div>
+                                        </div>`
+                        rnd++;
+                        $("#products").append(display);
+                    });
+
+                }else{
+                   alert(data.message);
+                }
+            });
+    }
+
+
+</script>

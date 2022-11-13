@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Product.Api</name>
+    </assembly>
+    <members>
+        <member name="T:Product.Api.Controllers.ProductController">
+            <summary>
+            Product Controller
+            </summary>
+        </member>
+        <member name="M:Product.Api.Controllers.ProductController.#ctor(Product.Business.Abstruct.IProductManager)">
+            <summary>
+            ctor
+            </summary>
+            <param name="productManager"></param>
+        </member>
+        <member name="M:Product.Api.Controllers.ProductController.Create(Product.Entities.DTOs.CreateProductModel)">
+            <summary>
+            Create product
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Product.Api.Controllers.ProductController.Update(Product.Entities.DTOs.ProductModel)">
+            <summary>
+            Update product
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Product.Api.Controllers.ProductController.Delete(System.Int64)">
+            <summary>
+            Delete product by Id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Product.Api.Controllers.ProductController.Get(System.Int64)">
+            <summary>
+            Get product by Id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Product.Api.Controllers.ProductController.GetAll">
+            <summary>
+            List of product
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Product.Api.Controllers.ProductController.CategoryProduct(System.String)">
+            <summary>
+            category product list
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
