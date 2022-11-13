@@ -5,3 +5,14 @@
   
 <br/>Docker MSSQL Install...
 <br/><code>docker run --cap-add SYS_PTRACE -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=19Mayis1919!" -p 1433:1433 --name mssqlsrv -d mcr.microsoft.com/azure-sql-edge</code>
+
+
+<br/><br/>
+Startup Projects
+
+<ol  type="1">
+<li>Category.Api</li>
+<li>Product.Api</li>
+<li>TandGSample.ApiGateway</li>
+<li>TandGSample.Web</li>
+</ol>
