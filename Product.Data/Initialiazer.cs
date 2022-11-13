@@ -73,7 +73,7 @@ namespace Product.Data
 
             foreach (var product in products)
             {
-                if (!await productRepository.AnyAsync(x => x.Id == product.Id))
+                if (!await productRepository.AnyAsync(x => x.Name == product.Name))
                     await productRepository.AddAsync(product);
             }
         }

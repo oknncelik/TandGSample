@@ -22,7 +22,7 @@ builder.Services.AddSwaggerGen(options =>
     {
         Title = "T&G Product Service",
         Version = "v1",
-        Description = "T&G Category Service Provider",
+        Description = "T&G Product Service Provider",
         Contact = new OpenApiContact
         {
             Name = "Okan Çelik",
